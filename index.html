@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Ticket System</title>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>ระบบค้นหา E-Ticket</h1>
+        <p>กรอกหมายเลขการจองหรือเบอร์โทรศัพท์ของคุณ</p>
+        <div>
+            <input type="text" id="search" placeholder="หมายเลขการจอง / เบอร์โทร" />
+            <button onclick="searchData()">ค้นหา</button>
+        </div>
+        <div id="output" style="display: none;">
+            <h3>ข้อมูลผู้สมัคร</h3>
+            <p><strong>บัตรที่เลือก:</strong> <span id="ticket"></span></p>
+            <p><strong>ชื่อ-นามสกุล:</strong> <span id="fullName"></span></p>
+            <p><strong>ชื่อเล่น:</strong> <span id="nickname"></span></p>
+            <p><strong>โรงเรียน:</strong> <span id="school"></span></p>
+            <p><strong>ระดับชั้น:</strong> <span id="grade"></span></p>
+            <div id="qrcode"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
