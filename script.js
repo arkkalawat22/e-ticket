@@ -43,8 +43,12 @@ function searchData() {
         document.getElementById("grade").innerText = result.grade || "ไม่มีข้อมูล";
 
         const qrContainer = document.getElementById("qrcode");
-        qrContainer.innerHTML = "";
-        QRCode.toCanvas(qrContainer, result.phoneNumber);
+        qrContainer.innerHTML = ""; // ล้าง QR Code เก่า
+        QRCode.toCanvas(qrContainer, result.phoneNumber || "ข้อมูลไม่ครบ", function (error) {
+            if (error) {
+                console.error("QR Code Error:", error);
+            }
+        });
     } else {
         alert("ไม่พบข้อมูลในระบบ");
         document.getElementById("output").style.display = "none";
